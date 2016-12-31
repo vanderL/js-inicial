@@ -1,17 +1,32 @@
-//peso / altura * altura
-
-var setPeso = document.getElementById('peso-2');
-var setAltura = document.getElementById('altura-2');
+var trsPacientes = document.getElementsByClassName("paciente");
 
 
-var paciente = {peso : setPeso.textContent, altura : setAltura.textContent};
+var posicaoAtual = 0;
 
-if (paciente.altura != 0) {
-	var imc = paciente.peso / (paciente.altura * paciente.altura);
-	var setIMC = document.getElementById("imc-2");
-	setIMC.textContent = imc;
+for (var posicaoAtual = 0;posicaoAtual <= trsPacientes.length - 1; posicaoAtual++) {
+		
+	var pacienteTr = trsPacientes[posicaoAtual];
 
-	console.log(imc);
-} else {
-	console.log("Entrada invalida! ")
+	var tdNome = pacienteTr.getElementsByClassName("info-nome")[0];
+	var tdPeso = pacienteTr.getElementsByClassName("info-peso")[0];
+	var tdAltura = pacienteTr.getElementsByClassName("info-altura")[0];
+
+	var paciente = {nome : tdNome.textContent, altura : tdAltura.textContent, peso :tdPeso.textContent};
+	if (paciente.altura != 0) {
+		
+		var imc = paciente.peso / (paciente.altura * paciente.altura);
+		
+		var setIMC = pacienteTr.getElementsByClassName("info-imc")[0];
+		setIMC.textContent = imc;
+
+		console.log(imc);
+	} else {
+		console.log("Entrada invalida! ");
+	}
 }
+
+
+
+
+
+
