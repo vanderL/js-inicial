@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Ifs</title>
+</head>
+<body>
+
+
+<script>
+	//Atividades de IFS
+	function mostraBonus(bonus){
+		console.log("Valor do Bonus: " + bonus);
+	} 
+	
+
+	var ehEstagiario = true;
+	var ehCLT = false;
+
+	if (ehCLT || ehEstagiario) {
+		var salarioMensal = 2500;
+		var bonus = 0;
+		
+		if (salarioMensal > 0 && salarioMensal < 1000) {
+			bonus = salarioMensal * 0.05;
+			console.log("Faixa Salarial até R$1.000,00");
+			mostraBonus(bonus);
+			
+		} else if(salarioMensal < 2000){
+			bonus = salarioMensal * 0.10;
+			console.log("Faixa salarial de R$1.000,00 até R$2.000,00 ");
+			mostraBonus(bonus);
+		} else{
+			bonus = salarioMensal * 0.15
+			console.log("Faixa salarioMensal acima de R$2.000,00");
+			mostraBonus(bonus);
+		}
+	}
+</script>
+
+
+
+</body>
+</html>
