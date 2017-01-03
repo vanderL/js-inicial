@@ -1,17 +1,19 @@
-var trsPacientes = document.getElementsByClassName("paciente");
+function calculaIMC() {
+    var trsPacientes = document.getElementsByClassName("paciente");
 
-percorreArray(trsPacientes, imprimeEModificaTdDeImc);
+    percorreArray(trsPacientes, function (pacienteTr){
 
-function imprimeEModificaTdDeImc(pacienteTr){
+        var pacienteAtual = montaPaciente(pacienteTr);    
+        var imc = pacienteAtual.pegaImc();
 
-    var pacienteAtual = montaPaciente(pacienteTr);    
-    var imc = pacienteAtual.pegaImc();
+        var tdImc = pacienteTr.getElementsByClassName("info-imc")[0]; 
+        tdImc.textContent = imc.toFixed(0);
 
-    var tdImc = pacienteTr.getElementsByClassName("info-imc")[0]; 
-    tdImc.textContent = imc;
+        console.log(imc.toFixed(2));
+    });
 
-    console.log(imc);
 }
+
 
 function montaPaciente(pacienteTr){
     var tdNome = pacienteTr.getElementsByClassName("info-nome")[0]; 
