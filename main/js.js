@@ -37,3 +37,23 @@ function montaPaciente(pacienteTr){
     }
     return paciente;
 }
+
+var botao = document.getElementById('calcula-imcs');
+
+botao.addEventListener("click", calculaIMC);
+botao.addEventListener("click", function(){
+    console.log("Teste");
+})
+
+var trs = document.getElementsByTagName('tr');
+percorreArray(trs, function(tr){
+    tr.addEventListener("dblclick", function(){
+        
+        if (this.getAttribute("bgcolor") != "grey") {
+            this.setAttribute("bgcolor", "grey");
+        }else {
+            this.setAttribute("bgcolor", "white");
+        }
+
+    })
+})
